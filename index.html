@@ -8,7 +8,7 @@
   </head>
   <body>
     <form class="form" action="index.html" method="post">
-
+     <div class="whole-form">
       <div class="form-element">
         <label for="title">Title:</label>
         <input type="text" name="title" required>
@@ -24,6 +24,22 @@
         <input type="text" name="year" required>
       </div>
 
+      <div class="form-element">
+        <label for="genre">Genre:</label>
+        <select class="genre" name="genre">
+          <option value="" disabled selected></option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="Arthouse">Arthouse</option>
+        </select>
+      </div>
+      </div>
+      <input type="submit" value="save"/>
     </form>
+
+    <h1>Film List</h1>
+    <ul id="film-list"></ul>
+
   </body>
 </html>

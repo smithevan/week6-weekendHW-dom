@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const newFormElement = document.querySelector('#whole-form');
   newFormElement.addEventListener('submit', handleNewFormElementSubmit);
 
+  const deleteAllButton = document.querySelector('#delete-all');
+  deleteAllButton.addEventListener('click', handleDeleteAllClick);
+
 })
 
 const handleNewFormElementSubmit = function (event) {
@@ -23,7 +26,7 @@ const createFilmListItem = function (form) {
   title.textContent = form.title.value;
   filmListItem.appendChild(title);
 
-  const director = document.createElement('h3');
+  const director = document.createElement('p');
   director.textContent = form.director.value;
   filmListItem.appendChild(director);
 
@@ -35,6 +38,15 @@ const createFilmListItem = function (form) {
   genre.textContent = form.genre.value;
   filmListItem.appendChild(genre);
 
-
   return filmListItem;
+}
+
+const handleDeleteAllClick = function (event) {
+  const filmList = document.querySelector('#film-list');
+  const confirmDelete = confirm("Press OK to delete all films");
+  if (confirmDelete === true)
+    filmList.innerHTML = '';
+  else
+    return; 
+
 }
